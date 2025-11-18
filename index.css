@@ -12,6 +12,7 @@ body {
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         h1 {
             color: #354B39;
@@ -44,3 +45,11 @@ body {
         .line-over{
             text-decoration: line-through;
         }
+        #daumRoughmapContainer1763472828594 {
+    max-width: 100%!important;
+    width: 100%!important;
+}
+
+#daumRoughmapContainer1763472828594 .root_daum_roughmap {
+    max-width: 100%!important;
+}
