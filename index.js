@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".open_btn");
+  const title = document.querySelector("#open_title");
   const txt = document.querySelector(".open_text");
   const win = document.getElementById("open_window");
   const closeBtn = document.getElementById("open_close"); // ✅ 수정된 부분
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buttons.forEach((btn) => {
     btn.addEventListener("click", function () {
       const idx = Number(this.dataset.index);
+      title.textContent = contents[idx].title;
       txt.textContent = contents[idx].text;
       win.style.display = "block";
       document.body.classList.add("open_body");
