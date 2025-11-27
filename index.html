@@ -4,36 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
+    <script src="content.js"></script>
+    <script src="index.js"></script>
     <title>28일 낭독회 알림장</title>
   </head>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // JSON 형태의 데이터
-      const contents = [
-        { text: "첫 번째 내용입니다. 시를 여는 창처럼 가볍고 선명합니다." },
-        { text: "두 번째 내용입니다. 물결처럼 번져 나갑니다." },
-        { text: "세 번째 내용입니다. 어둠 속에서도 선명한 문장처럼." },
-        { text: "세 번째 내용입니다. 어둠 속에서도 선명한 문장처럼." },
-        { text: "세 번째 내용입니다. 어둠 속에서도 선명한 문장처럼." },
-        { text: "세 번째 내용입니다. 어둠 속에서도 선명한 문장처럼." },
-        { text: "세 번째 내용입니다. 어둠 속에서도 선명한 문장처럼." },
-      ];
 
-      // 모든 open_btn을 가져오기
-      const buttons = document.querySelectorAll(".open_btn");
-
-      buttons.forEach((btn) => {
-        btn.addEventListener("click", function () {
-          const idx = Number(this.dataset.index); // data-index 읽기
-          const win = document.getElementById("open_window");
-
-          win.textContent = contents[idx].text; // JSON에서 텍스트 삽입
-          win.style.display = "block"; // 창 보이기
-          document.body.classList.add("open_body");
-        });
-      });
-    });
-  </script>
   <body>
     <div class="container">
       <h1>📖 낭독회 알림장</h1>
@@ -124,7 +99,10 @@
         <p>위 리스트는 '확정'된 셋리스트입니다!</p>
       </div>
 
-      <div id="open_window"></div>
+      <div id="open_window">
+        <button id="open_close">X</button>
+        <div class="open_text"></div>
+      </div>
 
       <div>
         <h2>⭐ 설문조사</h2>
